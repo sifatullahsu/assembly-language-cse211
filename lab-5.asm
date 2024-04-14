@@ -7,27 +7,26 @@ org 100H
 MAIN PROC
     ; Input start
     MOV AH, 1
-    INT 21H
-
+    
     ; Get the first character from the user and store it in BL
-    MOV BL, AL
     INT 21H
+    MOV BL, AL
 
     ; Get the second character from the user and store it in BH
-    MOV BH, AL
     INT 21H
+    MOV BH, AL
 
     ; Get the third character from the user and store it in CL
-    MOV CL, AL
     INT 21H
+    MOV CL, AL
 
     ; Print a newline character
     MOV AH, 2
     MOV DL, 0DH  ; Carriage Return (CR)
     INT 21H
     MOV DL, 0AH  ; Line Feed (LF)
-    INT 21H
-
+    INT 21H    
+    
     ; Output start
     MOV AH, 2
 

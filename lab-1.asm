@@ -1,4 +1,4 @@
-; LAB 03: Method for newline using PRINTN
+; LAB 01: Method for input and output
 
 ; Directives
 .MODEL SMALL
@@ -6,18 +6,12 @@
 .DATA
 .CODE
 
-; Include the EMU8086.INC file for macros and functions
-INCLUDE 'EMU8086.INC'
-
 ; Main procedure definition
 MAIN PROC
     ; Get the one character from the user and store it in BL
     MOV AH, 1
     INT 21H
     MOV BL, AL
-
-    ; Call PRINTN to print a newline character
-    PRINTN
 
     ; Print the first character
     MOV AH, 2
@@ -27,7 +21,7 @@ MAIN PROC
     ; Exit the program
     MOV AH, 4CH
     INT 21H
-MAIN ENDP
+MAIN ENDP    
 
 ; End the program, entry point is MAIN
 END MAIN
